@@ -1,0 +1,18 @@
+# Access to S3 bucket
+---
+- name: Access to S3
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+  
+  roles:
+    #- awscli
+    - s3Access
+
+  vars:
+
+   - region : "test"
+   - awsaccesskeyid : "test"
+   - awssecretaccesskey : "test"
+   - bucket_name : "test"
